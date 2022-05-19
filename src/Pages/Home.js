@@ -12,7 +12,7 @@ const Home = () => {
         console.log(fullTask)
 
         setTask(fullTask)
-        fetch('http://localhost:5000/list', {
+        fetch('https://ancient-mesa-52073.herokuapp.com/list', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ const Home = () => {
             .then(data => console.log(data))
     }
     useEffect(() => {
-        fetch('http://localhost:5000/list')
+        fetch('https://ancient-mesa-52073.herokuapp.com/list')
             .then(res => res.json())
             .then(data => setTask(data))
     }, [task])
@@ -51,13 +51,13 @@ const Home = () => {
             <div>
                 <h2>Tasks</h2>
                 {/* dint know why not working */}
-                {
+                {/* {
                     task?.map((t, index) => <div className='flex' key={index}>
                         <h3>{t.task} :</h3>
                         <p>{t.description}</p>
                         <button onClick={() => handleDelete(t._id)} className="btn">delete</button>
                     </div>)
-                }
+                } */}
             </div>
         </div>
     );
